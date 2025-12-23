@@ -54,7 +54,7 @@ python backend/server.py
 - Or use a local server:
 ```bash
 cd frontend
-python -m http.server 8000
+python -m http.server 3000
 ```
 
 3. **Start chatting!**
