@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MCP Chat Interface</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/themes.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="app-header">
+            <div class="header-content">
+                <h1 class="app-title">
+                    <span class="icon">🤖</span>
+                    MCP Chat
+                </h1>
+                <div class="header-actions">
+                    <button id="toolsBtn" class="btn btn-secondary">
+                        <span class="icon">🔧</span> Tools
+                    </button>
+                    <button id="resetBtn" class="btn btn-secondary">
+                        <span class="icon">🔄</span> Reset
+                    </button>
+                    <button id="themeBtn" class="btn btn-secondary">
+                        <span class="icon">🌙</span>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Chat Container -->
+            <div class="chat-container">
+                <div id="chatMessages" class="chat-messages">
+                    <div class="welcome-message">
+                        <h2>Welcome to MCP Chat! 👋</h2>
+                        <p>I'm powered by the Model Context Protocol with OpenAI integration.</p>
+                        <p>Try asking me to:</p>
+                        <ul>
+                            <li>Calculate: "What is 234 multiplied by 567?"</li>
+                            <li>Get weather: "What's the weather in Tokyo?"</li>
+                            <li>Read files: "Read config.json"</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Input Area -->
+                <div class="input-area">
+                    <form id="chatForm" class="chat-form">
+                        <textarea 
+                            id="messageInput" 
+                            class="message-input" 
+                            placeholder="Type your message here..."
+                            rows="1"
+                        ></textarea>
+                        <button type="submit" class="btn btn-primary send-btn">
+                            <span class="icon">📤</span>
+                            Send
+                        </button>
+                    </form>
+                    <div class="input-hint">
+                        Press Enter to send, Shift+Enter for new line
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sidebar (Tools Info) -->
+            <aside id="sidebar" class="sidebar hidden">
+                <div class="sidebar-header">
+                    <h3>Available Tools</h3>
+                    <button id="closeSidebar" class="btn-close">&times;</button>
+                </div>
+                <div id="toolsList" class="tools-list">
+                    <div class="loading">Loading tools...</div>
+                </div>
+            </aside>
+        </main>
+
+        <!-- Status Bar -->
+        <div class="status-bar">
+            <div class="status-item">
+                <span class="status-indicator" id="connectionStatus"></span>
+                <span id="statusText">Connecting...</span>
+            </div>
+            <div class="status-item">
+                <span id="toolCount">0 tools available</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div id="loadingOverlay" class="loading-overlay hidden">
+        <div class="spinner"></div>
+        <p>Processing...</p>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/config.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
